@@ -99,8 +99,8 @@ public class ZipRangeMerge {
 
 	public static ArrayList<RangeDS> readData() throws IOException {
 		String file = "./resource/input.csv";
-		//read file
 		ArrayList<RangeDS> content = new ArrayList<>();
+		// read file using autoclossable try-with-resources		
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = "";
 			while ((line = br.readLine()) != null) {
