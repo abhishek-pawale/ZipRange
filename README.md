@@ -30,3 +30,10 @@ Then the output should be = [94133,94133] [94200,94299] [94600,94699]
 
 If the input = [94133,94133] [94200,94299] [94226,94399]
 Then the output should be = [94133,94133] [94200,94399]
+
+How to use this program
+The input is provided using the input.csv file under resource folder
+
+Runtime required
+Java 8
+
