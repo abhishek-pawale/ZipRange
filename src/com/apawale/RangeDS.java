@@ -2,7 +2,8 @@ package com.apawale;
 
 /**
  * @author apawale
- * @version 1.0 This class is to store lower and upper bound
+ * @version 1.0 
+ * DS for stroing upper and lower range of zipcode
  */
 public class RangeDS {
 
