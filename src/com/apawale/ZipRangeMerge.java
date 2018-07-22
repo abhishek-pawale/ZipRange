@@ -45,23 +45,22 @@ public class ZipRangeMerge {
 		if (rangeList.size() == 0)
 			rangeList.add(toAdd);
 		else {
-			// Add new Range, if the range overlaps with existing range, merge
-			// them
+			//If the ranges overlap, merge them
 			ListIterator<RangeDS> iter = rangeList.listIterator();
 			boolean add = true; // flag
 			while (iter.hasNext()) {
 				RangeDS range = iter.next();
-				// new range within existing range, no need to add
+				// range already exists so no need to add
 				if (range.getLower() <= toAdd.getLower()
 						&& range.getUpper() >= toAdd.getUpper()) {
 					add = false;
 				}
-				// new range is out of existing range, add it
+				// add the new range
 				else if (range.getLower() > toAdd.getUpper()
 						|| range.getUpper() < toAdd.getLower()) {
 					add = true;
 				}
-				// Range overlaps, remove existing, update toAdd
+				// overlapping range, add the newest, remove old
 				else {
 					if (range.getLower() < toAdd.getLower())
 						toAdd.setLower(range.getLower());
@@ -100,6 +99,7 @@ public class ZipRangeMerge {
 
 	public static ArrayList<RangeDS> readData() throws IOException {
 		String file = "./resource/input.csv";
+		//read file
 		ArrayList<RangeDS> content = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = "";
