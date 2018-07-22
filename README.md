@@ -43,3 +43,7 @@ Make sure java 8 in installed on the system
 ## Runtime required
 Java 8
 
+## Further Improvements possible
+Null check using java optional
+Apache Commons io to read file
+Logging to file
